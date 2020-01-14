@@ -4,8 +4,6 @@ springmvc中是一层层的调用,当service调dao层出错,那么异常就被�
 
 SpringMVC的异常处理机制处理异常过程如下:
   1.创建自定义异常类
- 
-
 public class SysException extends Exception {
 
     // 存储提示信息的
@@ -18,9 +16,7 @@ public class SysException extends Exception {
     public String getMessage() {return message; }
     public void setMessage(String message) {this.message = message; }
 }
-
   2.创建异常处理器,异常处理器必须实现HandlerExceptionResolver接口,其resolveException()方法执行异常处理.
-
 // 自定义异常处理器
 public class MyExceptionResolver implements HandlerExceptionResolver {
 
@@ -39,7 +35,6 @@ public class MyExceptionResolver implements HandlerExceptionResolver {
         return mv;
     }
 }
-
   3.向Spring容器中注入异常处理器
   <!--配置异常处理器-->
 <bean id="myExceptionResolver" class="cn.maoritian.exception.MyExceptionResolver"/>
