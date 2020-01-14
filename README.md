@@ -35,7 +35,8 @@ public class MyExceptionResolver implements HandlerExceptionResolver {
         return mv;
     }
 }
-  3.向Spring容器中注入异常处理器
+ 
+ 3.向Spring容器中注入异常处理器
   <!--配置异常处理器-->
 <bean id="myExceptionResolver" class="cn.maoritian.exception.MyExceptionResolver"/>
 
