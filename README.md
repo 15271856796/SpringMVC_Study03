@@ -39,4 +39,29 @@ public class MyExceptionResolver implements HandlerExceptionResolver {
  3.向Spring容器中注入异常处理器
   <!--配置异常处理器-->
 <bean id="myExceptionResolver" class="cn.maoritian.exception.MyExceptionResolver"/>
+4.controller处理方法的编写(需要抛出异常,出现异常时,给一个提示的美观页面)
+
+@Controller
+@RequestMapping("/user")
+public class UserController {
+
+
+    @RequestMapping("/testException")
+    public String testException() throws SysException{
+        System.out.println("testException执行了...");
+
+        try {
+            // 模拟异常
+            int a = 10/0;
+        } catch (Exception e) {
+            // 打印异常信息
+            e.printStackTrace();
+            // 抛出自定义异常信息,如果没有异常处理的话 那么就会直接报500的错误
+            throw new SysException("查询所有用户出现错误了...");
+        }
+        return "success";
+    }
+
+}
+
 
