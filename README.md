@@ -39,7 +39,7 @@ public class MyExceptionResolver implements HandlerExceptionResolver {
  3.向Spring容器中注入异常处理器
  
   //配置异常处理器
-<bean id="myExceptionResolver" class="cn.maoritian.exception.MyExceptionResolver"/>
+    <bean id="myExceptionResolver" class="cn.maoritian.exception.MyExceptionResolver"/>
 
 
 4.controller处理方法的编写(需要抛出异常,出现异常时,给一个提示的美观页面)
